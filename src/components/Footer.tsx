@@ -2,27 +2,52 @@ import { MessageSquare } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="py-12 px-4 border-t border-border/50">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center">
-          {/* Logo */}
-          <div className="flex items-center justify-center gap-2 mb-6">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-              <MessageSquare className="w-5 h-5 text-primary-foreground" />
+    <footer className="relative py-16 px-4 overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-background to-primary/5" />
+      
+      <div className="relative z-10 max-w-6xl mx-auto">
+        <div className="glass-card rounded-3xl p-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            
+            {/* Logo e descrição */}
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center shadow-elegant">
+                  <MessageSquare className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-2xl font-bold gradient-text">GetAudio</span>
+              </div>
+              <p className="text-muted-foreground text-sm">
+                by <span className="font-semibold text-primary">GetBrain</span>
+              </p>
             </div>
-            <span className="text-xl font-bold">GetAudio</span>
-          </div>
 
-          {/* Description */}
-          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Produto GetBrain - Revolucionando a comunicação com IA para transcrição de áudios
-          </p>
+            {/* Estatísticas */}
+            <div className="flex justify-center gap-8">
+              <div className="text-center">
+                <div className="text-2xl font-bold gradient-text">99%</div>
+                <div className="text-xs text-muted-foreground">Precisão</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold gradient-text">2s</div>
+                <div className="text-xs text-muted-foreground">Velocidade</div>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl font-bold gradient-text">24/7</div>
+                <div className="text-xs text-muted-foreground">Ativo</div>
+              </div>
+            </div>
 
-          {/* Copyright */}
-          <div className="pt-8 border-t border-border/50">
-            <p className="text-sm text-muted-foreground">
-              © 2024 GetBrain. Todos os direitos reservados.
-            </p>
+            {/* Copyright */}
+            <div className="text-center md:text-right">
+              <p className="text-sm text-muted-foreground">
+                © 2024 GetBrain
+              </p>
+              <p className="text-xs text-muted-foreground mt-1">
+                Todos os direitos reservados
+              </p>
+            </div>
           </div>
         </div>
       </div>
