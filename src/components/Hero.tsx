@@ -34,18 +34,20 @@ export const Hero = () => {
           <Button 
             size="lg" 
             className="hero-glow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            onClick={() => window.open('#checkout', '_self')}
           >
             <MessageSquare className="w-5 h-5 mr-2" />
-            Começar Agora
+            Comprar Agora
           </Button>
           
           <Button 
             variant="outline" 
             size="lg"
             className="glass-card border-primary/30 hover:bg-primary/10 px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de tirar dúvidas sobre o GetAudio', '_blank')}
           >
-            <Mic className="w-5 h-5 mr-2" />
-            Ver Demo
+            <MessageSquare className="w-5 h-5 mr-2" />
+            Tire suas Dúvidas
           </Button>
         </div>
 

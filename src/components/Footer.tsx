@@ -10,18 +10,18 @@ export const Footer = () => {
             <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
               <MessageSquare className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-bold">TranscribeAI</span>
+            <span className="text-xl font-bold">GetAudio</span>
           </div>
 
           {/* Description */}
           <p className="text-muted-foreground mb-8 max-w-md mx-auto">
-            Revolucionando a comunicação com IA avançada para transcrição de áudios do WhatsApp
+            Produto GetBrain - Revolucionando a comunicação com IA para transcrição de áudios
           </p>
 
           {/* Copyright */}
           <div className="pt-8 border-t border-border/50">
             <p className="text-sm text-muted-foreground">
-              © 2024 TranscribeAI. Todos os direitos reservados.
+              © 2024 GetBrain. Todos os direitos reservados.
             </p>
           </div>
         </div>

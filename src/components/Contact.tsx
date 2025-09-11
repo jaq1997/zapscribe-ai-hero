@@ -12,60 +12,32 @@ export const Contact = () => {
             Pronto para <span className="gradient-text">começar?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Entre em contato conosco e descubra como nossa IA pode revolucionar sua comunicação
+            Entre em contato conosco pelo WhatsApp ou adquira o GetAudio agora mesmo
           </p>
         </div>
 
+        <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16">
+          <Button 
+            size="lg" 
+            className="hero-glow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            onClick={() => window.open('#checkout', '_self')}
+          >
+            <MessageCircle className="w-5 h-5 mr-2" />
+            Comprar GetAudio
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="glass-card border-primary/30 hover:bg-primary/10 px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
+            onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de tirar dúvidas sobre o GetAudio', '_blank')}
+          >
+            <MessageCircle className="w-5 h-5 mr-2" />
+            Fale Conosco
+          </Button>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact form */}
-          <div className="glass-card rounded-2xl p-8">
-            <h3 className="text-2xl font-semibold mb-6">Solicite uma Demo</h3>
-            
-            <form className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Nome</label>
-                  <Input 
-                    placeholder="Seu nome"
-                    className="bg-background/50 border-primary/20 focus:border-primary"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
-                  <Input 
-                    type="email"
-                    placeholder="seu@email.com"
-                    className="bg-background/50 border-primary/20 focus:border-primary"
-                  />
-                </div>
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">WhatsApp</label>
-                <Input 
-                  placeholder="(11) 99999-9999"
-                  className="bg-background/50 border-primary/20 focus:border-primary"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium mb-2">Mensagem</label>
-                <Textarea 
-                  placeholder="Conte-nos sobre suas necessidades..."
-                  rows={4}
-                  className="bg-background/50 border-primary/20 focus:border-primary resize-none"
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-6 rounded-full font-semibold transition-all duration-300 hover:scale-105"
-              >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Solicitar Demo Gratuita
-              </Button>
-            </form>
-          </div>
 
           {/* Contact info */}
           <div className="space-y-8">
@@ -89,7 +61,7 @@ export const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-muted-foreground">contato@transcribeai.com</p>
+                    <p className="text-muted-foreground">contato@getbrain.com</p>
                   </div>
                 </div>
                 
