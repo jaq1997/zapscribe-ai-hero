@@ -2,8 +2,10 @@ import { MessageSquare, Phone, Mail, MapPin } from "lucide-react";
 
 export const Footer = () => {
   return (
-    <footer className="bg-slate-900 py-16 border-t border-primary">
-      <div className="container mx-auto px-4">
+    <footer className="relative py-16 border-t border-primary">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-hero opacity-30" />
+      <div className="relative z-10 container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
             
             {/* Brand */}
