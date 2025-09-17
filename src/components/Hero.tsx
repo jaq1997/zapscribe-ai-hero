@@ -1,17 +1,29 @@
 import { Button } from "@/components/ui/button";
-import { MessageSquare, Mic, Zap } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4">
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-20">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero opacity-30" />
       
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass-card rounded-full px-6 py-3 mb-8 text-sm">
-          <Zap className="w-4 h-4 text-primary" />
-          <span>Powered by AI</span>
+        {/* Audio Line Visualization */}
+        <div className="flex justify-center items-center mb-8">
+          <div className="flex items-end space-x-1">
+            {[...Array(30)].map((_, i) => (
+              <div
+                key={i}
+                className="bg-primary rounded-full animate-pulse"
+                style={{
+                  width: '3px',
+                  height: `${Math.random() * 40 + 10}px`,
+                  animationDelay: `${i * 0.1}s`,
+                  animationDuration: `${Math.random() * 2 + 1}s`
+                }}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Main heading */}
@@ -29,8 +41,8 @@ export const Hero = () => {
           economizando tempo e facilitando sua comunicação.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+        {/* CTA Button */}
+        <div className="flex justify-center mb-16">
           <Button 
             size="lg" 
             className="hero-glow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
@@ -38,16 +50,6 @@ export const Hero = () => {
           >
             <MessageSquare className="w-5 h-5 mr-2" />
             Comprar Agora
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="glass-card border-primary/30 hover:bg-primary/10 px-8 py-6 text-lg rounded-full font-semibold transition-all duration-300 hover:scale-105"
-            onClick={() => window.open('https://wa.me/5511999999999?text=Olá! Gostaria de tirar dúvidas sobre o GetAudio', '_blank')}
-          >
-            <MessageSquare className="w-5 h-5 mr-2" />
-            Tire suas Dúvidas
           </Button>
         </div>
 
