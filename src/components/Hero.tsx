@@ -3,58 +3,17 @@ import { MessageSquare, Mic, Zap } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero opacity-30" />
       
-      {/* Semi-circular arc with points */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        {/* Main semi-circular arc */}
-        <div className="relative">
-          <div className="w-[600px] h-[300px] md:w-[800px] md:h-[400px] border-4 border-whatsapp-light/30 rounded-t-full bg-gradient-to-t from-transparent via-whatsapp-light/5 to-whatsapp-light/10"></div>
-          
-          {/* Points along the arc */}
-          {[...Array(12)].map((_, i) => {
-            const angle = (i * 15) - 90; // From -90 to 75 degrees for semi-circle
-            const radius = 300; // Base radius
-            const mdRadius = 400; // Larger radius for md screens
-            return (
-              <div
-                key={i}
-                className="absolute w-3 h-3 bg-whatsapp-light rounded-full animate-pulse hidden md:block"
-                style={{
-                  left: '50%',
-                  top: '50%',
-                  transform: `translate(-50%, -50%) translate(${Math.cos(angle * Math.PI / 180) * mdRadius}px, ${Math.sin(angle * Math.PI / 180) * mdRadius}px)`,
-                  animationDelay: `${i * 0.2}s`,
-                  animationDuration: '3s'
-                }}
-              />
-            );
-          })}
-          
-          {/* Points for mobile */}
-          {[...Array(8)].map((_, i) => {
-            const angle = (i * 22.5) - 90; // From -90 to 67.5 degrees for semi-circle
-            const radius = 300;
-            return (
-              <div
-                key={`mobile-${i}`}
-                className="absolute w-2 h-2 bg-whatsapp-light rounded-full animate-pulse md:hidden"
-                style={{
-                  left: '50%',
-                  top: '50%',
-                  transform: `translate(-50%, -50%) translate(${Math.cos(angle * Math.PI / 180) * radius}px, ${Math.sin(angle * Math.PI / 180) * radius}px)`,
-                  animationDelay: `${i * 0.3}s`,
-                  animationDuration: '3s'
-                }}
-              />
-            );
-          })}
-        </div>
-      </div>
-      
       <div className="relative z-10 text-center max-w-4xl mx-auto">
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 glass-card rounded-full px-6 py-3 mb-8 text-sm">
+          <Zap className="w-4 h-4 text-primary" />
+          <span>Powered by AI</span>
+        </div>
+
         {/* Main heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           Transforme seus
