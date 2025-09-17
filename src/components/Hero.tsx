@@ -16,7 +16,7 @@ export const Hero = () => {
                 key={i}
                 className="bg-primary rounded-full animate-pulse"
                 style={{
-                  width: '3px',
+                  width: '6px',
                   height: `${Math.random() * 40 + 10}px`,
                   animationDelay: `${i * 0.1}s`,
                   animationDuration: `${Math.random() * 2 + 1}s`

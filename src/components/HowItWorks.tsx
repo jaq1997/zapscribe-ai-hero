@@ -38,7 +38,7 @@ export const HowItWorks = () => {
         {/* Steps */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {steps.map((step, index) => (
-            <div key={index} className="relative">
+            <div key={index}>
               {/* Step card */}
               <div className="glass-card rounded-2xl p-8 text-center hover:bg-primary/5 transition-all duration-300 hover:scale-105">
                 {/* Step number */}
@@ -57,13 +57,6 @@ export const HowItWorks = () => {
                   {step.description}
                 </p>
               </div>
-
-              {/* Arrow connector */}
-              {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-4 transform -translate-y-1/2">
-                  <ArrowRight className="w-8 h-8 text-primary/50" />
-                </div>
-              )}
             </div>
           ))}
         </div>
