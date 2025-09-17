@@ -7,56 +7,54 @@ export const Hero = () => {
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero opacity-30" />
       
-      {/* Audio visualization elements */}
+      {/* Semi-circular arc with points */}
       <div className="absolute inset-0 flex items-center justify-center">
-        {/* Central arc */}
+        {/* Main semi-circular arc */}
         <div className="relative">
-          <div className="w-96 h-96 md:w-[500px] md:h-[500px] border-8 border-transparent bg-gradient-to-r from-primary via-whatsapp-light to-primary rounded-full opacity-20 animate-pulse"></div>
-          <div className="absolute inset-4 border-4 border-transparent bg-gradient-to-r from-primary/50 to-whatsapp-light/50 rounded-full opacity-30"></div>
-        </div>
-        
-        {/* Audio frequency waves */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          {[...Array(40)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute bg-primary/20 rounded-full animate-pulse"
-              style={{
-                width: '2px',
-                height: `${Math.random() * 60 + 20}px`,
-                transform: `rotate(${i * 9}deg) translateY(-${200 + Math.random() * 100}px)`,
-                animationDelay: `${Math.random() * 2}s`,
-                animationDuration: `${1.5 + Math.random()}s`
-              }}
-            />
-          ))}
-        </div>
-        
-        {/* Outer frequency ring */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          {[...Array(60)].map((_, i) => (
-            <div
-              key={`outer-${i}`}
-              className="absolute bg-whatsapp-light/15 rounded-full animate-pulse"
-              style={{
-                width: '1px',
-                height: `${Math.random() * 40 + 10}px`,
-                transform: `rotate(${i * 6}deg) translateY(-${300 + Math.random() * 80}px)`,
-                animationDelay: `${Math.random() * 3}s`,
-                animationDuration: `${2 + Math.random()}s`
-              }}
-            />
-          ))}
+          <div className="w-[600px] h-[300px] md:w-[800px] md:h-[400px] border-4 border-whatsapp-light/30 rounded-t-full bg-gradient-to-t from-transparent via-whatsapp-light/5 to-whatsapp-light/10"></div>
+          
+          {/* Points along the arc */}
+          {[...Array(12)].map((_, i) => {
+            const angle = (i * 15) - 90; // From -90 to 75 degrees for semi-circle
+            const radius = 300; // Base radius
+            const mdRadius = 400; // Larger radius for md screens
+            return (
+              <div
+                key={i}
+                className="absolute w-3 h-3 bg-whatsapp-light rounded-full animate-pulse hidden md:block"
+                style={{
+                  left: '50%',
+                  top: '50%',
+                  transform: `translate(-50%, -50%) translate(${Math.cos(angle * Math.PI / 180) * mdRadius}px, ${Math.sin(angle * Math.PI / 180) * mdRadius}px)`,
+                  animationDelay: `${i * 0.2}s`,
+                  animationDuration: '3s'
+                }}
+              />
+            );
+          })}
+          
+          {/* Points for mobile */}
+          {[...Array(8)].map((_, i) => {
+            const angle = (i * 22.5) - 90; // From -90 to 67.5 degrees for semi-circle
+            const radius = 300;
+            return (
+              <div
+                key={`mobile-${i}`}
+                className="absolute w-2 h-2 bg-whatsapp-light rounded-full animate-pulse md:hidden"
+                style={{
+                  left: '50%',
+                  top: '50%',
+                  transform: `translate(-50%, -50%) translate(${Math.cos(angle * Math.PI / 180) * radius}px, ${Math.sin(angle * Math.PI / 180) * radius}px)`,
+                  animationDelay: `${i * 0.3}s`,
+                  animationDuration: '3s'
+                }}
+              />
+            );
+          })}
         </div>
       </div>
       
       <div className="relative z-10 text-center max-w-4xl mx-auto">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 glass-card rounded-full px-6 py-3 mb-8 text-sm">
-          <Zap className="w-4 h-4 text-primary" />
-          <span>Powered by AI</span>
-        </div>
-
         {/* Main heading */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
           Transforme seus
