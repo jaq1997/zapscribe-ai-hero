@@ -3,9 +3,52 @@ import { MessageSquare, Mic, Zap } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4">
+    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
       {/* Background gradient overlay */}
       <div className="absolute inset-0 bg-gradient-hero opacity-30" />
+      
+      {/* Audio visualization elements */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        {/* Central arc */}
+        <div className="relative">
+          <div className="w-96 h-96 md:w-[500px] md:h-[500px] border-8 border-transparent bg-gradient-to-r from-primary via-whatsapp-light to-primary rounded-full opacity-20 animate-pulse"></div>
+          <div className="absolute inset-4 border-4 border-transparent bg-gradient-to-r from-primary/50 to-whatsapp-light/50 rounded-full opacity-30"></div>
+        </div>
+        
+        {/* Audio frequency waves */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          {[...Array(40)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute bg-primary/20 rounded-full animate-pulse"
+              style={{
+                width: '2px',
+                height: `${Math.random() * 60 + 20}px`,
+                transform: `rotate(${i * 9}deg) translateY(-${200 + Math.random() * 100}px)`,
+                animationDelay: `${Math.random() * 2}s`,
+                animationDuration: `${1.5 + Math.random()}s`
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Outer frequency ring */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          {[...Array(60)].map((_, i) => (
+            <div
+              key={`outer-${i}`}
+              className="absolute bg-whatsapp-light/15 rounded-full animate-pulse"
+              style={{
+                width: '1px',
+                height: `${Math.random() * 40 + 10}px`,
+                transform: `rotate(${i * 6}deg) translateY(-${300 + Math.random() * 80}px)`,
+                animationDelay: `${Math.random() * 3}s`,
+                animationDuration: `${2 + Math.random()}s`
+              }}
+            />
+          ))}
+        </div>
+      </div>
       
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         {/* Badge */}
